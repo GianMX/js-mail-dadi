@@ -1,16 +1,14 @@
-// VARIABLES ABOUT LOG IN DETAIL
-var logIn = prompt('inserisci lo stesso indirizzo email usato in fase di registrazione');
-var eMail = ['wadewilson@deadpool.com','jessecuster066@preacher.com', 'solidsnake@mgs.us', 'walterwhite@blue.com' , 'ripntear@untilitisdone.doom'];
-// TO CHECK VARIABLE
-var trovato = false;
-// EMAIL IN OUR DATABASE?
+// // VARIABLES ABOUT LOG IN DETAIL
+var logIn = prompt('Inserisci un indirizzo mail valido');
+var eMail = ['wadewilson@deadpool.com','jessecuster066@preacher.com','solidsnake@mgs.us','walterwhite@blue.com','ripntear@untilitisdone.doom',];
+var findIt = false;
+
 for (var i = 0; i < eMail.length; i++) {
-  var mail = eMail[i];
-  if (logIn == mail) {
-    trovato = true; // MAIL FOUND! YOU CAN JOIN
-    alert('Accesso confermato, bentornato!')
+// EMAIL FOUND!
+  if (logIn === eMail[i]) {
+    findIt = true;
+    document.getElementById('secretmail').innerHTML = ('Grazie per richiesto Uber-Star-Ship, una navetta arriverà alle sue coordinate entro 324 lune di Orione .')
+  } else if (findIt == false)  {
+    document.getElementById('secretmail').innerHTML = ('Salve cittadino del pianeta terra, sembra tu ti sia ritrovato dove non dovresti essere. Chiudi questo sito e dimentica tutto. ')
   }
-  else if (logIn !== mail)
-    trovato = false; // ACCESS DENIED! MAIL DON'T FOUND
-    alert('Accesso negato! Allontarnarsi subito dalla linea gialla!')
 }
